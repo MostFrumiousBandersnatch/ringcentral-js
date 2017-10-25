@@ -1,5 +1,4 @@
-var json = require('rollup-plugin-json');
-var virtual = require('rollup-plugin-virtual');
+var replace = require('rollup-plugin-replace');
 var commonjs = require('rollup-plugin-commonjs');
 var resolve = require('rollup-plugin-node-resolve');
 var builtins = require('rollup-plugin-node-builtins');
@@ -13,11 +12,9 @@ module.exports = {
         sourcemap: true
     },
     plugins: [
-        json(),
-        virtual({
-            'x-package.json': 'module.exports = ' + JSON.stringify({
-                version: require('./package.json').version
-            })
+        replace({
+            //FIXME Replace with rollup-plugin-virtual
+            "require('../../package.json').version" : JSON.stringify(require('./package.json').version)
         }),
         commonjs(), // support of commonjs modules
         builtins(), // adds qs and events

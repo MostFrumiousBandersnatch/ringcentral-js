@@ -1491,66 +1491,8 @@ var Auth_1 = Auth;
 //    scope?:string;
 //}
 
-var name = "ringcentral";
-var version = "3.1.3";
-var scripts = {"clean":"rm -rf build/*","uglify":"uglifyjs --compress --output build/ringcentral.min.js  --source-map 'filename=build/ringcentral.js.map' build/ringcentral.js","rollup":"rollup -c rollup.config.js","build":"npm run clean && npm run rollup && npm run uglify","watch":"npm run rollup -- --watch","test":"npm run hint && npm run build && npm run istanbul && npm run karma && npm run karma-webpack","mocha":"mocha --opts mocha.opts","mocha-watch":"npm run mocha -- --watch","mocha-api":"mocha ./test-api/**/*-spec.js","karma":"karma start karma.conf.js","karma-watch":"npm run karma -- --no-single-run --auto-watch","karma-webpack":"karma start karma.conf.webpack.js","karma-webpack-watch":"npm run karma-webpack -- --no-single-run --auto-watch","istanbul":"istanbul cover _mocha -- --opts mocha.opts","coveralls":"cat ./build/coverage/lcov.info | coveralls","start":"http-server -p 3030","docs":"jsdoc2md 'src/**/*!(test).js' > API.md","hint":"jshint src/**/*.js"};
-var dependencies = {"es6-promise":"^4.0.5","fetch-ponyfill":"^3.0.2","is-plain-object":"^2.0.1","object-assign":"^4.1.0","pubnub":"^4.4.2"};
-var devDependencies = {"chai":"3.5.0","coveralls":"2.13.1","fetch-mock":"5.9.4","http-server":"0.9.0","istanbul":"0.4.5","jsdoc-to-markdown":"2.0.1","jshint":"2.9.4","json-loader":"0.5.4","karma":"1.4.1","karma-chai-plugins":"0.8.0","karma-chrome-launcher":"2.0.0","karma-coverage":"1.1.1","karma-firefox-launcher":"1.0.0","karma-html-reporter":"0.2.6","karma-mocha":"1.3.0","karma-mocha-reporter":"2.2.2","karma-phantomjs-launcher":"1.0.2","karma-sourcemap-loader":"0.3.5","karma-webpack":"2.0.2","mocha":"3.2.0","phantomjs-prebuilt":"2.1.14","rollup":"^0.50.0","rollup-plugin-commonjs":"^8.2.4","rollup-plugin-json":"^2.3.0","rollup-plugin-node-builtins":"^2.1.2","rollup-plugin-node-resolve":"^3.0.0","rollup-plugin-virtual":"^1.0.1","sinon":"1.17.7","soap":"0.18.0","uglify-js":"^3.1.5","webpack":"^3.8.1","whatwg-fetch":"2.0.2"};
-var jsdoc2md = {"separators":true,"module-index-format":"grouped","param-list-format":"table","property-list-format":"table"};
-var jshintConfig = {"curly":false,"expr":true,"indent":4,"latedef":true};
-var preferGlobal = false;
-var main = "./src/SDK.js";
-var author = {"name":"RingCentral, Inc.","email":"devsupport@ringcentral.com"};
-var contributors = [{"name":"Kirill Konshin"}];
-var repository = {"type":"git","url":"git://github.com/ringcentral/ringcentral-js.git"};
-var bugs = {"url":"https://github.com/ringcentral/ringcentral-js/issues"};
-var homepage = "https://github.com/ringcentral/ringcentral-js";
-var engines = {"node":">=0.10.36"};
-var license = "MIT";
-var _package = {
-	name: name,
-	version: version,
-	scripts: scripts,
-	dependencies: dependencies,
-	devDependencies: devDependencies,
-	jsdoc2md: jsdoc2md,
-	jshintConfig: jshintConfig,
-	preferGlobal: preferGlobal,
-	main: main,
-	author: author,
-	contributors: contributors,
-	repository: repository,
-	bugs: bugs,
-	homepage: homepage,
-	engines: engines,
-	license: license,
-	"private": false
-};
-
-var _package$1 = Object.freeze({
-	name: name,
-	version: version,
-	scripts: scripts,
-	dependencies: dependencies,
-	devDependencies: devDependencies,
-	jsdoc2md: jsdoc2md,
-	jshintConfig: jshintConfig,
-	preferGlobal: preferGlobal,
-	main: main,
-	author: author,
-	contributors: contributors,
-	repository: repository,
-	bugs: bugs,
-	homepage: homepage,
-	engines: engines,
-	license: license,
-	default: _package
-});
-
-var require$$0$1 = ( _package$1 && _package ) || _package$1;
-
 var Constants = {
-    version: require$$0$1.version,
+    version: "3.1.3",
     authResponseProperty: 'RCAuthorizationResponse'
 };
 
